@@ -21,7 +21,14 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
-
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
+    },
+  },
   -- override plugin configs
   {
     "williamboman/mason.nvim",
@@ -46,11 +53,19 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
   {
-    "mbbill/undotree",
-    cmd = "UndotreeToggle",
+    "sitiom/nvim-numbertoggle",
+    lazy = false
   },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = "TroubleToggle",
+  }
+  -- {
+  --   "mbbill/undotree",
+  --   cmd = "UndotreeToggle",
+  -- },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

@@ -6,9 +6,9 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
 }
-M.undotree = {
+M.telescopeundo = {
   n ={
-    ["<C-u>"] = {":UndotreeToggle <CR>","Toggle Undotree"}
+    ["<C-u>"] = {":Telescope undo <CR>","Toggle Telescope Undo"}
   }
 }
 -- more keybinds!
